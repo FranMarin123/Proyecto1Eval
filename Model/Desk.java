@@ -3,11 +3,11 @@ package Model;
 import java.util.Arrays;
 
 public class Desk {
-    Card[] cards;
+    private Card[] cards;
 
-    public Desk() {
+    /*public Desk() {
         this(null);
-    }
+    }*/
     public Desk(Card[] cards) {
         this.cards = cards;
     }
@@ -19,8 +19,6 @@ public class Desk {
     public void setCards(Card[] cards) {
         this.cards = cards;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -37,35 +35,47 @@ public class Desk {
                 '}';
     }
 
+    /**
+     * Este método elige una carta aleatoria del mazo.
+     * @return Devuelve una carta.
+     */
     public Card pickARandomCard(){
         int randomPos= (int) (Math.random() * (cards.length - 1));
         return cards[randomPos];
     }
 
-    public Card[] frenchDesk(){
-        Card[] frenchDesk=new Card[52];
+    /**
+     * Genera un mazo de cartas de 52
+     * @return
+     */
+    public void frenchDesk(){
+        this.cards=new Card[52];
         String suit="";
-        for (int i=0,value=1;i<frenchDesk.length;i++){
+        for (int i=0,value=1;i<cards.length;i++){
+            cards[i]=new Card();
             if (i<13) {
                 suit="Corazones";
-                frenchDesk[i].setValue(value);
-                frenchDesk[i].setSuit(suit);
+                cards[i].setValue(value);
+                cards[i].setSuit(suit);
             }else if (i<26) {
                 suit="Treboles";
-                frenchDesk[i].setValue(value);
-                frenchDesk[i].setSuit(suit);
+                cards[i].setValue(value);
+                cards[i].setSuit(suit);
             }else if (i<39) {
                 suit="Picas";
-                frenchDesk[i].setValue(value);
-                frenchDesk[i].setSuit(suit);
+                cards[i].setValue(value);
+                cards[i].setSuit(suit);
             }else {
                 suit="Diamantes";
-                frenchDesk[i].setValue(value);
-                frenchDesk[i].setSuit(suit);
+                cards[i].setValue(value);
+                cards[i].setSuit(suit);
             }
-            
+            if(value==13){
+                value=1;
+            }
+            value++;
         }
-        return frenchDesk;
+
     }
 
 
