@@ -18,6 +18,12 @@ public class Player {
         this.money = money;
     }
 
+    public Player(String name) {
+        this.cards = null;
+        this.name = name;
+        this.money = 0;
+    }
+
     public Card[] getCards() {
         return cards;
     }
@@ -70,5 +76,13 @@ public class Player {
                 comp=true;
             }
         }
+    }
+
+    public void addMoney(int numPlay){
+        this.money=money*numPlay;
+    }
+
+    public void looseMoney(int numPlay){
+        this.money=money/2;
     }
 }
