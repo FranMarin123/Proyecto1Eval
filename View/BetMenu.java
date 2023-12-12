@@ -38,4 +38,16 @@ public class BetMenu {
         System.out.println("Tu saldo actual es de "+balance+" puntos");
     }
 
+    public static void trophyPrint(String figure){
+        System.out.println(figure);
+    }
+
+    public static int thophyOptionCheck(String msg){
+        int result=-1;
+        while (result<1 || result>6){
+            result=UI.readInt(msg);
+        }
+        return result;
+    }
+
 }

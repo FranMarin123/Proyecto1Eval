@@ -27,7 +27,7 @@ public class UI {
         return keyboard.nextLine();
     }
 
-    public static void pressSpace(){
+    public static void pressEnter(){
         Scanner keyboard=new Scanner(System.in);
         System.out.println("Pulse enter para continuar ...");
         keyboard.nextLine();
