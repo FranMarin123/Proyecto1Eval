@@ -1,26 +1,23 @@
 package Model;
 
+import java.util.Objects;
+
 public class Game {
     private int turn;
     private Player[] players;
-    private Desk desk;
+    private Deck deck;
 
-    public Game(int turn, Player[] players, Desk desk) {
+    public Game(int turn, Player[] players, Deck deck) {
         this.turn = turn;
         this.players = players;
-        this.desk = desk;
+        this.deck = deck;
     }
 
     public Game() {
         this(0, null, null);
     }
 
-    public int getTurn() {
-        return turn;
-    }
-
-    public void setTurn(int turn) {
-        this.turn = turn;
+    public Game(Player[] players, Deck fDeck) {
     }
 
     public Player[] getPlayers() {
@@ -31,12 +28,12 @@ public class Game {
         this.players = players;
     }
 
-    public Desk getDesk() {
-        return desk;
+    public Deck getDesk() {
+        return deck;
     }
 
-    public void setDesk(Desk desk) {
-        this.desk = desk;
+    public void setDesk(Deck deck) {
+        this.deck = deck;
     }
 
 
@@ -45,6 +42,8 @@ public class Game {
         for (int j = 0; j < playerToCalculate.getCards().length; j++) {
             if (playerToCalculate.getCards()[j].getValue() >= 10) {
                 points += 10;
+            } else if (playerToCalculate.getCards()[j].getValue() == 1 && points < 11) {
+                points += 11;
             } else {
                 points += playerToCalculate.getCards()[j].getValue();
             }
@@ -52,18 +51,24 @@ public class Game {
         return points;
     }
 
-    public Player calculateWinner() {
+    public String calculateWinner() {
         int points = 0;
         int winnerPoints = 0;
-        int winnerPosition = -1;
+        String winner="";
         for (int i = 0; i < this.players.length; i++) {
             points = calculatePoints(this.players[i]);
-            if (winnerPoints < points) {
+            if (winnerPoints==points){
+                winner="empate";
+            }
+            if (winnerPoints < points && points <= 21) {
                 winnerPoints = points;
-                winnerPosition = i;
+                winner=this.players[i].getName();
+            }
+            if (Objects.equals(winner, "")){
+                winner="ninguno";
             }
         }
-        return this.players[winnerPosition];
+        return winner;
     }
 
     public boolean isAllPlayers() {
@@ -79,7 +84,7 @@ public class Game {
     public boolean isAlreadyPlayed() {
         boolean comp = true;
         if (this.players == null) {
-            comp=false;
+            comp = false;
         }
         return comp;
     }

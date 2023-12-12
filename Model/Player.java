@@ -67,16 +67,24 @@ public class Player {
 
 
     public void addCard(Card cardToAdd){
-        this.cards=new Card[52];
         boolean comp=false;
         for (int i=0;i<cards.length && !comp;i++){
-            if (cards[i]==null){
+            if (cards[i].getValue()==0){
                 cards[i]=new Card();
                 this.cards[i]=cardToAdd;
                 comp=true;
             }
         }
     }
+
+    public void fillPlayerCards(){
+        this.cards=new Card[52];
+        for (int i=0;i<this.cards.length;i++){
+            this.cards[i]=new Card(0,"");
+        }
+    }
+
+
 
     public void addMoney(int numPlay){
         this.money=money*numPlay;

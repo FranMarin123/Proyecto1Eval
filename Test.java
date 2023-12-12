@@ -1,15 +1,15 @@
 import Model.Card;
-import Model.Desk;
+import Model.Deck;
 import Model.Player;
 
 public class Test {
     public static void main(String[] args) {
-        Desk fDesk = new Desk(new Card[1]);
-        fDesk.frenchDesk();
-        System.out.println(fDesk);
-        System.out.println(fDesk.pickARandomCard());
+        Deck fDeck = new Deck(new Card[1]);
+        fDeck.frenchDesk();
+        System.out.println(fDeck);
+        System.out.println(fDeck.pickARandomCard());
         Player player1 = new Player(new Card[1], "Francisco", 0);
-        player1.addCard(fDesk.pickARandomCard());
+        player1.addCard(fDeck.pickARandomCard());
         System.out.println(player1);
         System.out.println(player1.getCards()[0]);
     }
