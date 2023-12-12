@@ -5,7 +5,7 @@ import Model.Player;
 public class Test {
     public static void main(String[] args) {
         Deck fDeck = new Deck(new Card[1]);
-        fDeck.frenchDesk();
+        fDeck.frenchDeck();
         System.out.println(fDeck);
         System.out.println(fDeck.pickARandomCard());
         Player player1 = new Player(new Card[1], "Francisco", 0);

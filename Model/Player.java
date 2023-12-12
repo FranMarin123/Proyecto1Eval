@@ -84,13 +84,4 @@ public class Player {
         }
     }
 
-
-
-    public void addMoney(int numPlay){
-        this.money=money*numPlay;
-    }
-
-    public void looseMoney(int numPlay){
-        this.money=money/2;
-    }
 }

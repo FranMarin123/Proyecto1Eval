@@ -61,7 +61,7 @@ public class Deck {
      *
      * @return
      */
-    public void frenchDesk() {
+    public void frenchDeck() {
         this.cards = new Card[52];
         String suit = "";
         for (int i = 0, value = 1; i < cards.length; i++) {
@@ -84,7 +84,7 @@ public class Deck {
                 cards[i].setSuit(suit);
             }
             if (value == 13) {
-                value = 1;
+                value = 0;
             }
             value++;
         }

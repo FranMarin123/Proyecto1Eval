@@ -16,7 +16,7 @@ public class WithoutBetController {
         int numberOfPlayers = WithoutBetMenu.numberPlayers();
         //MainMenu.clearScreen();
         Deck fDeck = new Deck(new Card[1]);
-        fDeck.frenchDesk();
+        fDeck.frenchDeck();
         Game withoutBetGame = new Game(0, createPlayers(numberOfPlayers), fDeck);
         //MainMenu.clearScreen();
         fillAllPlayerCards(withoutBetGame);

@@ -71,23 +71,4 @@ public class Game {
         return winner;
     }
 
-    public boolean isAllPlayers() {
-        boolean comp = true;
-        for (int i = 0; i < this.players.length && comp; i++) {
-            if (this.players[i].getName().isEmpty()) {
-                comp = false;
-            }
-        }
-        return comp;
-    }
-
-    public boolean isAlreadyPlayed() {
-        boolean comp = true;
-        if (this.players == null) {
-            comp = false;
-        }
-        return comp;
-    }
-
-
 }

@@ -14,6 +14,8 @@ public class MainController {
             case 1:
                 WithoutBetController.withoutBetController();
                 break;
+            case 2:
+                BetController.betController();
             default:
                 break;
         }
