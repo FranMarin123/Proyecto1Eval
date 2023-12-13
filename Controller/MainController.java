@@ -3,11 +3,16 @@ package Controller;
 import View.MainMenu;
 
 public class MainController {
+    /**
+     * Este método ejecuta el programa
+     */
     public static void programExecute(){
         typeGameSelect();
-        //WithoutBetController.withoutBetController();
     }
 
+    /**
+     * Este método elige el modo de juego
+     */
     public static void typeGameSelect(){
         int option=-1;
         do {

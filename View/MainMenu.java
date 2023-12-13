@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class MainMenu {
+    /**
+     * Este método devuelve un entero que es la opción que seleccionamos
+     * @return Devuelve un entero que es la opción deseada
+     */
     public static int mainMenu() {
         System.out.println("Bienvenido al Casino v1.0 \n" +
                 "1-BlackJack sin apuesta\n" +
@@ -15,10 +19,19 @@ public class MainMenu {
         return UI.readInt("Elija una opción");
     }
 
+    /**
+     * Este método devuelve un String que sería un nombre
+     * @return Devuelve un String introducido por pantalla
+     */
     public static String readName() {
         return UI.readString("Introduce el nombre");
     }
 
+    /**
+     * Este método recibe un array de jugadores y pide por pantalla un nombre, comprueba si el nombre está repetido
+     * @param players Recibe un array de players
+     * @return Devuelve un String que es el nombre comprobado
+     */
     public static String nameCheck(Player[] players) {
         String name = "";
         boolean comp = true;
@@ -35,6 +48,10 @@ public class MainMenu {
         return name;
     }
 
+    /**
+     * Recibe un String con el ganador e imprime por pantalla un mensaje determinado según el resultado de la partida
+     * @param winner
+     */
     public static void winnerResolution(String winner){
         switch (winner){
             case "empate":
@@ -49,6 +66,11 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Este método recibe una carta y la representa por pantalla
+     * @param cardToPrint Recibe la carta a representar
+     * @return Devuelve un String con la representación de la carta
+     */
     public static String printCard(Card cardToPrint){
         String suit=cardToPrint.getSuit();
         String toPrint="";
@@ -88,13 +110,4 @@ public class MainMenu {
 
         return toPrint;
     }
-
-    /*public static void clearScreen(){
-        try {
-            Runtime.getRuntime().exec("cls");
-        } catch (final Exception e) {
-
-        }
-    }*/
-
 }

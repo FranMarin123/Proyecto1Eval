@@ -37,6 +37,12 @@ public class Game {
     }
 
 
+    /**
+     * Este método recibe un jugador y devuelve un
+     * entero con los puntos del jugador recibido
+     * @param playerToCalculate Recibe un jugador del que vamos a calcular los puntos
+     * @return Devuelve los puntos que tiene el jugador
+     */
     public int calculatePoints(Player playerToCalculate) {
         int points = 0;
         for (int j = 0; j < playerToCalculate.getCards().length; j++) {
@@ -51,6 +57,10 @@ public class Game {
         return points;
     }
 
+    /**
+     * Consulta los puntos de todos los jugadores y devuelve un ganador
+     * @return Devuelve el resultado de la partida
+     */
     public String calculateWinner() {
         int points = 0;
         int winnerPoints = 0;

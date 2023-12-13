@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class Deck {
     private Card[] cards;
 
-    /*public Desk() {
+    public Deck() {
         this(null);
-    }*/
+    }
     public Deck(Card[] cards) {
         this.cards = cards;
     }
@@ -37,7 +37,6 @@ public class Deck {
 
     /**
      * Este método elige una carta aleatoria del mazo.
-     *
      * @return Devuelve una carta.
      */
     public Card pickARandomCard() {
@@ -48,6 +47,10 @@ public class Deck {
         return this.cards[randomPos];
     }
 
+    /**
+     * Este método recibe una carta y elimina dicha carta del mazo
+     * @param cardToRemove Recibe una carta para eliminar
+     */
     public void removeCard(Card cardToRemove){
         for (int i=0;i<this.cards.length;i++){
             if (this.cards[i]==cardToRemove){
@@ -57,9 +60,8 @@ public class Deck {
     }
 
     /**
-     * Genera un mazo de cartas de 52
-     *
-     * @return
+     * Genera un array de cartas de 52 y crea las
+     * cartas utilizadas en la baraja francesa
      */
     public void frenchDeck() {
         this.cards = new Card[52];
@@ -88,8 +90,5 @@ public class Deck {
             }
             value++;
         }
-
     }
-
-
 }

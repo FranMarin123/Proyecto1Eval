@@ -76,7 +76,11 @@ public class Player {
                 '}';
     }
 
-
+    /**
+     * Este método añade una carta a las cartas del jugador
+     *
+     * @param cardToAdd Recibe la carta que queremos añadir a las cartas del jugador
+     */
     public void addCard(Card cardToAdd) {
         boolean comp = false;
         for (int i = 0; i < cards.length && !comp; i++) {
@@ -88,13 +92,21 @@ public class Player {
         }
     }
 
+    /**
+     * Este método inicia todos los trofeos del jugador a unos valores por defecto
+     */
     public void fillPlayerTrophy() {
         this.playerTrophies = new Trophy[5];
         for (int i = 0; i < this.playerTrophies.length; i++) {
-            this.playerTrophies[i] = new Trophy("",0);
+            this.playerTrophies[i] = new Trophy("", 0);
         }
     }
 
+    /**
+     * Este método recibe un trofeo por parámetro y lo añade a los trofeos del jugador
+     *
+     * @param trophyToAdd Recibe el trofeo que queremos añadir a los trofeos del jugador
+     */
     public void addTrophy(Trophy trophyToAdd) {
         boolean comp = false;
         for (int i = 0; i < playerTrophies.length && !comp; i++) {
@@ -106,7 +118,11 @@ public class Player {
         }
     }
 
-public void fillPlayerCards() {
+    /**
+     * Este método añade a las cartas del jugador un
+     * array de 52 e inicia todas a unos valores por defecto
+     */
+    public void fillPlayerCards() {
         this.cards = new Card[52];
         for (int i = 0; i < this.cards.length; i++) {
             this.cards[i] = new Card(0, "");

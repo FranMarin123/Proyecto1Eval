@@ -37,6 +37,10 @@ public class Awards {
         this.trophies = trophies;
     }
 
+    /**
+     * Este método no recibe nada, crea un array de
+     * 5 trofeos y genera unos trofeos determinados
+     */
     public void createTrophies() {
         this.trophies = new Trophy[5];
         iniciateTrophies();
@@ -50,12 +54,22 @@ public class Awards {
         }
     }
 
+    /**
+     * Este método inicializa los trofeos del
+     * array de trofeos a unos valores por defecto.
+     */
     public void iniciateTrophies(){
         for (int i = 0; i < this.trophies.length; i++) {
             this.trophies[i]=new Trophy("",1);
         }
     }
 
+    /**
+     * Este método recibe un valor entero y devuelve un
+     * string con la figura de un trofeo con el valor entero representado
+     * @param value Recibe un valor entero que es el valor del trofeo
+     * @return Devuelve la figura en forma de String con el valor representado
+     */
     public String trophyRepresent(int value) {
         String trophy = "";
         if (value < 10000) {
@@ -82,6 +96,10 @@ public class Awards {
         return trophy;
     }
 
+    /**
+     * Este método asigna un valor por defecto a la figura del trofeo insertado por parámetro
+     * @param trophyToRemove Recibe un trofeo que queremos eliminar.
+     */
     public void removeTrophy(Trophy trophyToRemove) {
         for (int i = 0; i < this.trophies.length; i++) {
             if (trophyToRemove.getValue() == trophies[i].getValue() &&
