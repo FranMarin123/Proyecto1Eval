@@ -58,7 +58,7 @@ public class BetMenu {
      * @param moneyEarned Recibe el dinero que ha perdido el jugador en esta ronda
      */
     public static void moneyLoseMessage(int balance,int moneyEarned){
-        System.out.println("Felicidades, has perdido: "+moneyEarned+" puntos.\n" +
+        System.out.println("Has perdido: "+moneyEarned+" puntos.\n" +
                 "Tienes actualmente "+balance+" puntos de saldo.");
     }
 
